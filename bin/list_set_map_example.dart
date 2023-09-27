@@ -40,4 +40,20 @@ void main(){
   print(set1.union(set2));
   print(set1.intersection(set2));
   print(set2.difference(set1));
+
+
+///map - store values as key-value pairs keys must be unique values can be same or different
+///map<key,value>
+Map<String,dynamic> map1 = {'name': 'Anoop','age' :20,'mark':9.1,'phone':0987456123};
+map1.addAll({'email':'anoop@gmail.com'});
+map1['pincode'] = 654123;
+print(map1);
+map1['age'] = 32;
+print(map1);
+map1.forEach((key, value) {
+  print('$key:$value');
+});
+print(map1.containsKey('hello'));
+print(map1.containsValue(32));
+print(map1.containsKey('age'));
 }
