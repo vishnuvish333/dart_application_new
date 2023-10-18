@@ -1,74 +1,38 @@
 abstract class Father{
-  void fdetails(String name,String job,int phone){
-  
-  }
+  void fdetails(String name, String job, int phone);
 }
-
 abstract class Mother{
-   void mdetails(String name,String job,int phone){
-    
-
-   }  
+  void mdetails(String name, String job, int phone);
 }
+///class Child extends Father, Mother{} - this is not supported in dart
+class Child implements Father, Mother{
 
-///clas child extends fatgher, mother{}- this not supporrted in dart
-class  Child implements Father,Mother {
-
-  void cdetails(String name, int age, int phone) {
-    print("child details");
-    print("name   = $name");
-    print("age   = $age");
-    print("phone   = $phone");
+  void cdetails(String name, int age , int std){
+    print('Child Details');
+    print('name    :  $name');
+    print("age     :  $age");
+    print('class   :  $std');
   }
-    @override
-  void fdetails(String name, String job, int phone) {
-    print("father details");
-    print("name   = $name");
-    print("job   = $job");
-    print("phone   = $phone");
-    
-  }
-  
-  @override
-  void mdetails(String name, String job, int phone) {
-   print("mother details");
-    print("name   = $name");
-    print("job   = $job");
-    print("phone   = $phone");
-  
-  }
-}
-  class Housename implements Father,Mother,Child{
-     void hdetails(String housename, String location, int pincode) {
-    print("house details");
-    print("Housename   = $housename");
-    print("location   = $location");
-    print("pincode   = $pincode");
-  }
-
-  @override
-  void cdetails(String name, int age, int phone) {
-    // TODO: implement cdetails
-  }
-  
   @override
   void fdetails(String name, String job, int phone) {
-    // TODO: implement fdetails
+    print('Father Details');
+    print('name    :  $name');
+    print("job     :  $job");
+    print('phone   :  $phone');
   }
-  
   @override
   void mdetails(String name, String job, int phone) {
-    // TODO: implement mdetails
+    print('Mother Details');
+    print('name    :  $name');
+    print("job     :  $job");
+    print('phone   :  $phone');
   }
-    
 }
-
 void main(){
- Child obj = Child();
- obj.cdetails('ronny', 24 , 980897997);
- print('----------------------------------');
- obj.fdetails("johnson", "finance", 9908056799);
- print('--------------------------------------');
- obj.mdetails("caroline", 'homemaker', 90809076098);
-
+  Child obj = Child();
+  obj.cdetails("Abhi", 12, 6);
+  print("-----------------------");
+  obj.fdetails("Gopan", "Business", 9876543210);
+  print("-----------------------");
+  obj.fdetails("Sini", "HouseWife", 9876510200);
 }
